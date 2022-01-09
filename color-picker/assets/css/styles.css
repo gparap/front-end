@@ -1,0 +1,26 @@
+/* © 2022 gparap */
+#picker{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#picker li {
+    float: left;
+    margin: 0 10px 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+#white{
+    background-color: whitesmoke;
+}
+#red{
+    background-color: red;
+}
+#green{
+    background-color: green;
+}
+#blue{
+    background-color: blue;
+}
