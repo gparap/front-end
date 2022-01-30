@@ -26,6 +26,13 @@ function displayTime() {
 function getTimeNow() {
     time = new Date();
     hours = time.getHours();
+    
+    // check whether to display the hours to 12-hour format
+    var hourType = document.getElementById("hour-type-12");
+    if (hourType.checked == true) {
+        hours = hours % 12;
+    }
+    
     minutes = time.getMinutes();
     seconds = time.getSeconds();
 }
