@@ -1,0 +1,33 @@
+/* Copyright (c) 2022 gparap */
+
+body {
+    margin-top: 2em;
+}
+
+h1 {
+    margin: 1em;
+}
+
+div {
+    height: auto;
+    margin: 1px;
+    padding: 1px;
+}
+
+#button-result {
+    width: 390px;
+    margin: 1px;
+    height: 64px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+/* all buttons except result */
+.button-input {
+    width: 96px;
+    height: 48px;
+    padding: 1px;
+    margin: 1px;
+    text-align: center;
+    font-size: larger;
+}
