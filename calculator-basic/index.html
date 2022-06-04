@@ -20,38 +20,39 @@
         
         <!-- Buttons 9,8,7,/ -->
         <div class="d-flex justify-content-center">
-            <button class="btn btn-primary button-input" type="button">9</button>
-            <button class="btn btn-primary button-input" type="button">8</button>
-            <button class="btn btn-primary button-input" type="button">7</button>
-            <button class="btn btn-primary button-input" type="button">/</button>
+            <button id="button-9" onclick="handleButtonClick(9)" class="btn btn-primary button-input" type="button">9</button>
+            <button id="button-8" onclick="handleButtonClick(8)" class="btn btn-primary button-input" type="button">8</button>
+            <button id="button-7" onclick="handleButtonClick(7)" class="btn btn-primary button-input" type="button">7</button>
+            <button id="button-divide" onclick="handleButtonClick('/')" class="btn btn-primary button-input" type="button">/</button>
         </div>
         
         <!-- Buttons 6,5,4,* -->
         <div class="d-flex justify-content-center">
-            <button class="btn btn-primary button-input" type="button">6</button>
-            <button class="btn btn-primary button-input" type="button">5</button>
-            <button class="btn btn-primary button-input" type="button">4</button>
-            <button class="btn btn-primary button-input" type="button">*</button>
+            <button id="button-6" onclick="handleButtonClick(6)" class="btn btn-primary button-input" type="button">6</button>
+            <button id="button-5" onclick="handleButtonClick(5)" class="btn btn-primary button-input" type="button">5</button>
+            <button id="button-4" onclick="handleButtonClick(4)" class="btn btn-primary button-input" type="button">4</button>
+            <button id="button-multiply" onclick="handleButtonClick('*')" class="btn btn-primary button-input" type="button">*</button>
         </div>
         
         <!-- Buttons 3,2,1,- -->
         <div class="d-flex justify-content-center">
-            <button class="btn btn-primary button-input" type="button">3</button>
-            <button class="btn btn-primary button-input" type="button">2</button>
-            <button class="btn btn-primary button-input" type="button">1</button>
-            <button class="btn btn-primary button-input" type="button">-</button>
+            <button id="button-3" onclick="handleButtonClick(3)" class="btn btn-primary button-input" type="button">3</button>
+            <button id="button-2" onclick="handleButtonClick(2)" class="btn btn-primary button-input" type="button">2</button>
+            <button id="button-1" onclick="handleButtonClick(1)" class="btn btn-primary button-input" type="button">1</button>
+            <button id="button-minus" onclick="handleButtonClick('-')" class="btn btn-primary button-input" type="button">-</button>
         </div>
         
         <!-- Buttons C,0,=,+ -->
         <div class="d-flex justify-content-center">
-            <button class="btn btn-primary button-input" type="button">C</button>
-            <button class="btn btn-primary button-input" type="button">0</button>
-            <button class="btn btn-primary button-input" type="button">=</button>
-            <button class="btn btn-primary button-input" type="button">+</button>
+            <button id="button-clear" onclick="handleButtonClick('C')" class="btn btn-primary button-input" type="button">C</button>
+            <button id="button-0" onclick="handleButtonClick(0)" class="btn btn-primary button-input" type="button">0</button>
+            <button id="button-equals" onclick="handleButtonClick('=')" class="btn btn-primary button-input" type="button">=</button>
+            <button id="button-add" onclick="handleButtonClick('+')" class="btn btn-primary button-input" type="button">+</button>
         </div>
     </div>
     
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/calculator.js"></script>
 </body>
 
 </html>
