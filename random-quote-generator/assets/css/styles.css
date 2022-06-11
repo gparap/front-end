@@ -1,0 +1,28 @@
+/* Copyright (c) 2022 gparap */
+
+body {
+    margin: 2em;
+    background-color: whitesmoke;
+}
+
+div.container {
+    border: 0.1rem dashed skyblue; 
+    width: fit-content;
+    margin-top: 64px; 
+    background-color: aliceblue;
+}
+
+h1 {
+    margin: 1em;
+}
+
+textarea {
+    min-width: 256px; 
+    margin-bottom: 32px; 
+    resize: none; 
+    text-align: center;
+}
+
+button {
+    margin-bottom: 32px;
+}
