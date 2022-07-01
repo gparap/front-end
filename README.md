@@ -1,2 +1,2 @@
 # web
-Web application projects
+JavaScript responsive projects
