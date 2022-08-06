@@ -1,0 +1,18 @@
+/* Copyright (c) 2022 gparap */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
