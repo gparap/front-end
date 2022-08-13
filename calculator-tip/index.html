@@ -1,0 +1,73 @@
+<!-- © 2022 gparap -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="js/bootstrap.bundle.min.js.map">
+</head>
+
+<body>
+  <div class="container text-center col-sm-9">
+        <h1>Tip Calculator</h1>
+
+        <!--initial bill-->
+        <div class="col-sm-9">
+            <label style="width: 33%;" for="bill-initial">Enter initial bill</label>
+            <input id="bill-initial" type="number">
+        </div>
+
+        <!--tip percentage-->
+        <div class="col-sm-9">
+            <label style="width: 33%;" for="tip-percentage">Enter tip (%)</label>
+            <input id="tip-percentage" type="number">
+        </div>
+
+        <!--number of persons to split-->
+        <div class="col-sm-9">
+            <label style="width: 33%;" for="no-of-persons">Enter persons to split</label>
+            <input id="no-of-persons" type="number">
+        </div>
+
+        <!--calculate-->
+        <div>
+            <button class="btn btn-dark" onclick="calculate()">Calculate</button>
+        </div>
+
+        <div id="results">
+          <!--bill total-->
+          <div>
+              <label for="bill-total">Bill Total:</label>
+              <h6 id="bill-total">0.0</h6>
+          </div>
+
+          <!--bill per person-->
+          <div>
+              <label for="bill-split">Bill / Person:</label>
+              <h6 id="bill-split">0.0</h6>
+          </div>
+
+          <!--tips total-->
+          <div>
+              <label for="tips-total">Tips Total:</label>
+              <h6 id="tips-total">0.0</h6>
+          </div>
+
+          <!--tips per person-->
+          <div>
+              <label for="tips-split">Tips / Person:</label>
+              <h6 id="tips-split">0.0</h6>
+          </div>
+      </div><!--end of results-->
+  </div><!--end of container-->
+
+    <!--scripts-->
+    <script src="js/tip.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
