@@ -1,0 +1,25 @@
+/* © 2022 gparap */
+
+
+body {
+    margin-top: 32px;
+    color: black;
+}
+
+label, input {
+    margin-top: 16px;
+}
+
+p {
+    font-size: 24px;
+    color: black;
+    margin-top: 32px;
+}
+
+button {
+    margin-top: 32px;
+}
+
+#results {
+    margin-top: 16px;
+}

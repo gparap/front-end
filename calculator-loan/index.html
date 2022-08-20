@@ -1,0 +1,68 @@
+<!-- © 2022 gparap -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="js/bootstrap.bundle.min.js.map">
+</head>
+
+<body>
+  <div class="container text-center col-sm-9">
+        <h1>Loan Calculator</h1>
+
+        <!--loan-->
+        <div class="col-sm-9">
+            <label style="width: 33%;" for="loan">Loan ($)</label>
+            <input id="loan" type="number">
+        </div>
+
+        <!--interest-->
+        <div class="col-sm-9">
+            <label style="width: 33%;" for="interest">Interest / Year (%)</label>
+            <input id="interest" type="number">
+        </div>
+
+        <!--years-->
+        <div class="col-sm-9">
+            <label style="width: 33%;" for="years">Total Years</label>
+            <input id="years" type="number">
+        </div>
+
+        <!--button-->
+        <div>
+            <button class="btn btn-dark" onclick="calculate()">Calculate</button>
+        </div>
+
+        <!--results-->
+        <div id="results">
+          <!--payment-->
+          <div>
+              <label for="payment-monthly">Payment / Month: ($)</label>
+              <h6 id="payment-monthly">0.0</h6>
+          </div>
+
+          <!--payment total-->
+          <div>
+              <label for="payment-total">Payment Total: ($)</label>
+              <h6 id="payment-total">0.0</h6>
+          </div>
+
+          <!--interest total-->
+          <div>
+              <label for="interest-total">Interest Total: ($)</label>
+              <h6 id="interest-total">0.0</h6>
+          </div>
+      </div><!--end of results-->
+  </div><!--end of container-->
+
+    <!--scripts-->
+    <script src="js/calculator.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
