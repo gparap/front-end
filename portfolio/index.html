@@ -11,6 +11,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #Home {
+            background: url('img/gparap_promo.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,14 +34,14 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link active" aria-current="page" href="#About">About</a>
                     <a class="nav-link active" aria-current="page" href="#Portfolio">Portfolio</a>
-                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    <a class="nav-link active" aria-current="page" href="#Contact">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Home section-->
-    <section id="Home" style="background: url('img/gparap_promo.png'); background-repeat: no-repeat; background-size: 100% 100%">
+    <section id="Home">
         <div class="text-center">
             <h1>Portfolio</h1>
             <p class="lead">Applications made with ❤️ + ☕️</p>
@@ -43,7 +50,7 @@
 
     <!-- About section -->
     <section id="About">
-        <div class="container" style="padding-top: 4rem;">
+        <div class="container">
             <div>
                 <p class="h1">About</p>
                 <br />
@@ -84,7 +91,7 @@
 
     <!-- Portfolio section -->
     <section id="Portfolio">
-        <div class="container" style="padding-top: 4rem;">
+        <div class="container">
             <div>
                 <p class="h1">Portfolio</p>
                 <br />
@@ -95,6 +102,30 @@
                 <img src="img/img_03.png" alt="Portfolio Image" class="img-thumbnail">
                 <img src="img/img_04.png" alt="Portfolio Image" class="img-thumbnail">
                 <img src="img/img_05.png" alt="Portfolio Image" class="img-thumbnail">
+            </div>
+
+            <!-- Contact area -->
+            <div id="Contact" class="container">
+                <div>
+                    <p class="h1">Contact</p>
+                    <br />
+                </div>
+                <div>
+                    <form>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">E-mail</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="enter your e-mail">
+                        </div>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput2">Subject</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="enter your subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput3">Another label</label>
+                            <textarea name="" class="form-control" id="formGroupExampleInput3" cols="30" rows="10" placeholder="enter your message"></textarea>
+                          </div>
+                      </form>
+                </div>
             </div>
         </div>
     </section>

@@ -9,3 +9,12 @@ img {
 img:hover {
     opacity: 0.75;
 }
+#About > div {
+    padding-top: 4rem;
+}
+#Portfolio > div {
+    padding-top: 4rem;
+}
+#Contact > div {
+    padding-top: 4rem;
+}
