@@ -1,0 +1,14 @@
+/* https://mit-license.org | © 2023 gparap */
+
+.container {
+    padding: 10rem 0;
+}
+
+h1{
+    padding: 1rem; 
+    font-size: 48px;
+}
+
+.btn {
+    padding: 1rem;
+}
