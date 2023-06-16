@@ -1,4 +1,4 @@
-// © 2022 gparap
+// © 2023 gparap
 // Roll two dice
 
 var textPlaceholder = document.getElementById("text-placeholder-1");
@@ -6,15 +6,26 @@ var diceLeft = document.getElementById("dice-left");
 var diceRight = document.getElementById("dice-right");
 
 function roll() {
+    //apply dice animations
+    diceLeft.classList.add("dice-animation");
+    diceRight.classList.add("dice-animation");
+    
+    //roll the dice
     removePlaceholderText();
     var dice1 = rollLeftDice();
     var dice2 = rollRightDice();
-
+    
     //check if we have the same value on both dice
     //and inform the user
     if (dice1 === dice2) {
         textPlaceholder.innerHTML = "Double!!!"
     }
+    
+    //reset dice animations
+    setTimeout(function(){
+        diceLeft.classList.remove("dice-animation");
+    diceRight.classList.remove("dice-animation");
+    }, 250);    //delay ~= animation duration
 }
 
 function removePlaceholderText() {

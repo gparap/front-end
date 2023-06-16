@@ -1,4 +1,4 @@
-/* © 2022 gparap */
+/* © 2023 gparap */
 
 body {
     color: black;
@@ -9,5 +9,20 @@ p {
     color: black;
 }
 button {
-    padding: 2px;
+    padding: 1px;
+}
+
+/*dice rolling animation description*/
+.dice-animation{
+    animation-name: dice-animation-frames;
+    animation-duration: 0.25s;
+}
+/*dice rolling animation frames*/
+@keyframes dice-animation-frames {
+    0%{
+        transform: rotateX(0deg) rotateY(0deg)
+    }
+    100%{
+        transform: rotateX(180deg) rotateY(180deg)
+    }
 }
