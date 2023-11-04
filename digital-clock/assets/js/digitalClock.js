@@ -31,6 +31,15 @@ function getTimeNow() {
     var hourType = document.getElementById("hour-type-12");
     if (hourType.checked == true) {
         hours = hours % 12;
+
+        //add pm or am on 12-hour clock
+        var period = document.getElementById("period");
+        if (time.getHours() >= 12) {
+            period.innerHTML = "&nbsp;pm";
+        }
+        else {
+            period.innerHTML = "&nbsp;pm";
+        }
     }
     
     minutes = time.getMinutes();
