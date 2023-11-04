@@ -11,20 +11,22 @@
 </head>
 
 <body>
-    <div id="info">Time now...</div>
-    <div id="hours-type">
-        <input type="radio" id="hour-type-12" name="hours-12" value="12">
-        <label for="12">12-hours</label><br>
-        <input type="radio" id="hour-type-24" name="hours-12" value="24" checked>
-        <label for="24">24-hours</label>
+    <div id="container">
+        <div id="info">Digital Clock</div>
+        <div id="clock">
+            <div id="hours" class="clock-item"></div>
+            <div class="clock-item">:</div>
+            <div id="minutes" class="clock-item"></div>
+            <div class="clock-item">:</div>
+            <div id="seconds" class="clock-item"></div>            
+        </div>
+        <div id="hours-type">
+           <input type="radio" id="hour-type-12" name="hours-12" value="12">
+           <label class="fw-lighter" for="12">12-hours</label><br>
+           <input type="radio" id="hour-type-24" name="hours-12" value="24" checked>
+           <label class="fw-lighter" for="24">24-hours</label>
+        </div>
     </div>
-    <div id="clock">
-        <div id="hours" class="clock-item"></div>
-        <div class="clock-item">:</div>
-        <div id="minutes" class="clock-item"></div>
-        <div class="clock-item">:</div>
-        <div id="seconds" class="clock-item"></div>            
-   </div>
     
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/digitalClock.js"></script>

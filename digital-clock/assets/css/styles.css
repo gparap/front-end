@@ -1,27 +1,42 @@
 /* Copyright (c) 2022 gparap */
 
 body {
-    background: #FFF;
+    background: #FFFFFF;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    background-color: #BDBDBD;
+    width: 16rem;
+    height: 8rem;
 }
 
 #info {
-    color: aqua;
-    background-color: gray;
-    width: 128px;
+    color:#FFFFFF;
+    background-color: #455A64;
+    width: inherit;
+    height: 40px;
+    margin: auto;
     padding: 1%;
-    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
 }
 
 #clock {
     align-items: center;
-    background-color: lightgray;
-    color: black;
-    color: blue;
-    width: 128px;
+    display: flex;
+    justify-content: center;
+    background-color: #CFD8DC;
+    width: inherit;
     height: 40px;
     padding: 1%;
-    margin: 1%;
-    
+    margin: auto;
 }
 
 .clock-item {
