@@ -1,4 +1,4 @@
-/* Copyright (c) 2022 gparap */
+/* Copyright (c) 2022-2023 gparap */
 
 body {
     background: #FFFFFF;
@@ -12,7 +12,7 @@ body {
 #container {
     background-color: #BDBDBD;
     width: 16rem;
-    height: 8rem;
+    height: 9.5rem;
 }
 
 #info {
@@ -34,7 +34,7 @@ body {
     justify-content: center;
     background-color: #CFD8DC;
     width: inherit;
-    height: 40px;
+    height: 64px;
     padding: 1%;
     margin: auto;
 }

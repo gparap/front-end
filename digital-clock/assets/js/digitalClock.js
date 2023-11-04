@@ -1,4 +1,4 @@
-// Copyright (c) 2022 gparap
+// Copyright (c) 2022-2023 gparap
 // Digital Clock
 
 var time = null;
@@ -48,3 +48,10 @@ function fixOneZeroDisplay() {
         seconds = "0" + seconds;
     }
 }
+
+function getDate() {
+    let timestamp = new Date();
+    let date = document.getElementById("date");
+    date.innerHTML += timestamp.getDate() + '/' + (timestamp.getMonth() + 1) + '/' + timestamp.getFullYear();
+}
+getDate();
