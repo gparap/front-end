@@ -15,30 +15,149 @@
         <h1>Countdown Timer</h1>
         <br>
         <div class="p-2" style="display: flex;">
-            <h2>00h:&nbsp;</h2>
-            <h2>00m:&nbsp;</h2>
-            <h2>00s&nbsp;</h2>
+            <h2 id="hours">0h:&nbsp;</h2>
+            <h2 id="minutes">0m:&nbsp;</h2>
+            <h2 id="seconds">0s&nbsp;</h2>
         </div>
         <br>
         <div class="row">
             <div class="col">
                 <div>
-                    <button class="btn btn-outline-dark" id="hours-plus" onclick=""><pre style="padding-top: 25%;">Hours +1</pre></button>
-                    <button class="btn btn-outline-dark" id="minutes-plus" onclick=""><pre style="padding-top: 25%;">Minutes +1</pre></button>
-                    <button class="btn btn-outline-dark" id="seconds-plus" onclick=""><pre style="padding-top: 25%;">Seconds +1</pre></button>    
+                    <button class="btn btn-outline-dark" id="hours-plus" onclick="plus('hours')"><pre style="padding-top: 25%;">Hours +1</pre></button>
+                    <button class="btn btn-outline-dark" id="minutes-plus" onclick="plus('minutes')"><pre style="padding-top: 25%;">Minutes +1</pre></button>
+                    <button class="btn btn-outline-dark" id="seconds-plus" onclick="plus('seconds')"><pre style="padding-top: 25%;">Seconds +1</pre></button>    
                 </div>
                 <div>
-                    <button class="btn btn-outline-dark" id="hours-minus" onclick=""><pre style="padding-top: 25%;">Hours -1</pre></button>
-                    <button class="btn btn-outline-dark" id="minutes-minus" onclick=""><pre style="padding-top: 25%;">Minutes -1</pre></button>
-                    <button class="btn btn-outline-dark" id="seconds-minus" onclick=""><pre style="padding-top: 25%;">Seconds -1</pre></button> 
+                    <button class="btn btn-outline-dark" id="hours-minus" onclick="minus('hours')"><pre style="padding-top: 25%;">Hours -1</pre></button>
+                    <button class="btn btn-outline-dark" id="minutes-minus" onclick="minus('minutes')"><pre style="padding-top: 25%;">Minutes -1</pre></button>
+                    <button class="btn btn-outline-dark" id="seconds-minus" onclick="minus('seconds')"><pre style="padding-top: 25%;">Seconds -1</pre></button> 
                 </div>
             </div>
         </div>
         <div class="p-2">
-            <button class="btn btn-dark">Start Countdown</button>
+            <button class="btn btn-dark" onclick="start()">Start Countdown</button>
+            <button class="btn btn-dark" onclick="reset()">Reset Countdown</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        //adds value to the counter
+        function plus(id) {
+            switch (id) {
+                case "hours":
+                    var hoursTag = document.getElementById("hours");
+                    hours = hoursTag.innerHTML;
+                    hours = parseInt(hours) + 1;
+                    hoursTag.innerHTML = hours + "h:&nbsp;";
+                    break;
+
+                case "minutes":
+                    var minutesTag = document.getElementById("minutes");
+                    minutes = minutesTag.innerHTML;
+                    minutes = parseInt(minutes) + 1;
+                    minutesTag.innerHTML = minutes + "m:&nbsp;";
+                    break;
+                break;
+
+                case "seconds":
+                    var secondsTag = document.getElementById("seconds");
+                    seconds = secondsTag.innerHTML;
+                    seconds = parseInt(seconds) + 1;
+                    secondsTag.innerHTML = seconds + "s:&nbsp;";
+                break;
+            
+                default:
+                    break;
+            }
+        }
+
+        //subtracts value from the counter
+        function minus(id) {
+            switch (id) {
+                case "hours":
+                    var hoursTag = document.getElementById("hours");
+                    hours = hoursTag.innerHTML;
+                    hours = parseInt(hours) - 1;
+                    if (hours <= 0){
+                        hours = 0;
+                    }
+                    hoursTag.innerHTML = hours + "h:&nbsp;";
+                    break;
+
+                case "minutes":
+                    var minutesTag = document.getElementById("minutes");
+                    minutes = minutesTag.innerHTML;
+                    minutes = parseInt(minutes) - 1;
+                    if (minutes <= 0){
+                        minutes = 0;
+                    }
+                    minutesTag.innerHTML = minutes + "m:&nbsp;";
+                    break;
+                break;
+
+                case "seconds":
+                    var secondsTag = document.getElementById("seconds");
+                    seconds = secondsTag.innerHTML;
+                    seconds = parseInt(seconds) - 1;
+                    if (seconds <= 0){
+                        seconds = 0;
+                    }
+                    secondsTag.innerHTML = seconds + "s:&nbsp;";
+                break;
+            
+                default:
+                    break;
+            }
+        }
+
+        //reset the counter
+        function reset() {
+            var hoursTag = document.getElementById("hours");
+            hoursTag.innerHTML = "0h:&nbsp;"
+            var minutesTag = document.getElementById("minutes");
+            minutesTag.innerHTML = "0m:&nbsp;"
+            var secondsTag = document.getElementById("seconds");
+            secondsTag.innerHTML = "0s:&nbsp;"
+        }
+
+        //start the countdown timer
+        function start() {
+            //get the elements values
+            var hoursTag = document.getElementById("hours");
+            hours = hoursTag.innerHTML;
+            hours = parseInt(hours);
+            var minutesTag = document.getElementById("minutes");
+            minutes = minutesTag.innerHTML;
+            minutes = parseInt(minutes);
+            var secondsTag = document.getElementById("seconds");
+            seconds = secondsTag.innerHTML;
+            seconds = parseInt(seconds);
+
+            //start countdown
+            const interval = setInterval(() => {
+                 //check if timer should stop
+                if (seconds === 0 && minutes === 0 && hours === 0) {
+                        clearInterval(interval);
+                        alert("Countdown is over!");
+                    }
+
+                //continue timer
+                else{
+                    if (seconds === 0){
+                        secondsTag.innerHTML = "60s:&nbsp;"
+                        seconds = 60;
+                        minus("minutes");
+                    }
+                    if (minutes === 0 && hours > 0){
+                        minutesTag.innerHTML = "60m:&nbsp;"
+                        minutes = 60;
+                        minus("hours");
+                    }
+                }
+                minus("seconds");
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>
