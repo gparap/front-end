@@ -15,13 +15,15 @@
 			transform: translate(-0%, -100%);
 			background-color: whitesmoke;
 		}
+
 		#lightbox-caption {
 			margin: auto;
 			padding: 0;
 			display: flex;
 			justify-content: space-between;
 		}
-		.lightbox-chevron{
+
+		.lightbox-chevron {
 			position: absolute;
 			top: 50%;
 			color: lightgrey;
@@ -64,59 +66,64 @@
 				<div class="row row-cols-3" style="--bs-gutter-x: 0;">
 					<div class="col">
 						<img class="img-fluid img-thumbnail" src="../img/img_01.jpg" alt=""
-							onclick="expandImage(event)">
+							onclick="showLightboxImage(event)">
 					</div>
 					<div class="col">
 						<img class="img-fluid img-thumbnail" src="../img/img_02.jpg" alt=""
-							onclick="expandImage(event)">
+							onclick="showLightboxImage(event)">
 					</div>
 					<div class="col">
 						<img class="img-fluid img-thumbnail" src="../img/img_03.jpg" alt=""
-							onclick="expandImage(event)">
+							onclick="showLightboxImage(event)">
 					</div>
 				</div>
 				<div class="row row-cols-3" style="--bs-gutter-x: 0;">
 					<div class="col">
 						<img class="img-fluid img-thumbnail" src="../img/img_04.jpg" alt=""
-							onclick="expandImage(event)">
+							onclick="showLightboxImage(event)">
 					</div>
 					<div class="col">
 						<img class="img-fluid img-thumbnail" src="../img/img_05.jpg" alt=""
-							onclick="expandImage(event)">
+							onclick="showLightboxImage(event)">
 					</div>
 					<div class="col">
 						<img class="img-fluid img-thumbnail" src="../img/img_06.jpg" alt=""
-							onclick="expandImage(event)">
+							onclick="showLightboxImage(event)">
 					</div>
 				</div>
 
 				<!--Lightbox-->
 				<div id="lightbox-container" class="container py-4">
+					
 					<!--image caption-->
-					<div id="lightbox-caption">img_01.jpg
+					<div id="lightbox-caption">
+						<span id="lightbox-caption-img"></span>
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-							class="bi bi-x-circle" viewBox="0 0 16 16">
+							class="bi bi-x-circle" viewBox="0 0 16 16" onclick="closeLightbox();">
 							<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
 							<path
 								d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
 						</svg>
 					</div>
+					
 					<!--image preview-->
-					<div id="lightbox-preview">
-						<img src="../img/img_01.jpg" alt="" style="width: 100%;" />
+					<div>
+						<img id="lightbox-preview" src="" alt="" style="width: 100%;" />
 					</div>
+					
 					<!--previous image-->
 					<div class="lightbox-chevron" style="right: 100%;">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-							class="bi bi-chevron-left" viewBox="0 0 16 16">
+							class="bi bi-chevron-left" viewBox="0 0 16 16" onclick="showPreviousImage();">
 							<path fill-rule="evenodd"
 								d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
 						</svg>
 					</div>
+					
 					<!--next image-->
 					<div class="lightbox-chevron" style="left: 100%;">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-							class="bi bi-chevron-right" viewBox="0 0 16 16">
+							class="bi bi-chevron-right" viewBox="0 0 16 16" onclick="showNextImage();">
 							<path fill-rule="evenodd"
 								d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
 						</svg>
@@ -178,6 +185,88 @@
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript">
+		let images = Array();
+		let lightbox = document.getElementById('lightbox-container');
+		let index = 0;
+		
+		window.onload = () => {
+			//hide the lightbox
+			lightbox.style.display = 'none';
+			
+			//get all images
+			let imgs = document.querySelectorAll(".img-thumbnail");
+			for(i=0; i<imgs.length;i++){
+				//keep only the name of the image
+				let imageSplitArray = imgs[i].src.split('/');
+				let imageName = imageSplitArray[imageSplitArray.length-1];
+				images.push(imageName);
+			}
+			//for(i=0; i<images.length;i++){
+			//	console.log(images[i]);
+			//}
+		}
+
+		function showLightboxImage(event) {
+			//get the image that was clicked
+			let image = event.target;
+			
+			//show the lighttbox
+			lightbox.style.display = 'block';
+			
+			//show the selected image in lightbox
+			let lightboxImg = document.getElementById('lightbox-preview');
+			lightboxImg.src = image.src;
+			
+			//keep only the name of the image
+			let imageSplitArray = lightboxImg.src.split('/');
+			let imageName = imageSplitArray[imageSplitArray.length-1];
+			
+			//find the current index of the image in the array
+			for(i=0; i<images.length;i++){
+				if (imageName === images[i]){
+					index = i;
+					break;
+				}
+			}
+			
+			//show the image caption
+			let lightboxCaptionImg = document.getElementById('lightbox-caption-img');
+			lightboxCaptionImg.innerHTML = imageName;
+		}
+		
+		function closeLightbox() {
+			lightbox.style.display = 'none';
+		}
+		
+		function showNextImage() {
+			if (index <= 4){
+				//show the image caption
+				let lightboxCaptionImg = document.getElementById('lightbox-caption-img');
+				lightboxCaptionImg.innerHTML = images[index + 1];
+				
+				//show the selected image in lightbox
+				let lightboxImg = document.getElementById('lightbox-preview');
+				lightboxImg.src = "../img/" + images[index + 1];
+				
+				index++;
+			}
+		}
+		
+		function showPreviousImage() {
+			if (index >= 1){
+				//show the image caption
+				let lightboxCaptionImg = document.getElementById('lightbox-caption-img');
+				lightboxCaptionImg.innerHTML = images[index - 1];
+				
+				//show the selected image in lightbox
+				let lightboxImg = document.getElementById('lightbox-preview');
+				lightboxImg.src = "../img/" + images[index - 1];
+			
+				index--;
+			}
+		}
+	</script>
 </body>
 
 </html>
