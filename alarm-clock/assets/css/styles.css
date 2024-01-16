@@ -1,0 +1,64 @@
+/* Copyright (c) 2024 gparap */
+
+body {
+    background: lightgray;
+}
+
+/* centered */
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#canvas {
+    background: lightgray;
+    padding: 0;
+    border-style: hidden;
+}
+
+#container-clock-digital {
+    text-align: center;
+    padding: 20px;
+    border: 1rem solid #fff;
+    background-color: lightgray;
+    position: relative;
+    min-width: 32rem;
+}
+
+#info-digital {
+    color:#FFFFFF;
+    background-color: #455A64;
+    width: inherit;
+    height: 40px;
+    margin: auto;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+}
+
+#clock-digital {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #CFD8DC;
+    width: inherit;
+    height: 64px;
+    padding: 1%;
+    margin: auto;
+}
+
+.clock-item {
+    display: block;
+    float: left;
+}
+
+/* 
+
+
+
+
+
+ */

@@ -1,0 +1,55 @@
+<!-- Copyright (c) 2024 gparap -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- select clock mode -->
+    <div class="container">
+        <select>
+        <option value="analog" selected>Analog</option>
+        <option value="digital">Digital</option>
+    </select>
+    </div>
+
+    <!-- analog clock -->
+    <div class="text-center">
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+
+    <!-- digital clock -->
+    <div class="container">
+        <div id="container-clock-digital">
+                <div id="info-digital">Digital Clock</div>
+                <div id="clock-digital">
+                    <div id="hours" class="clock-item"></div>
+                    <div class="clock-item">:</div>
+                    <div id="minutes" class="clock-item"></div>
+                    <div class="clock-item">:</div>
+                    <div id="seconds" class="clock-item"></div>
+                    <div id="period" class="clock-item">&nbsp;</div>
+                    <div id="date">&nbsp;-&nbsp;
+                    </div>
+                </div>
+                <div id="hours-type">
+                <input type="radio" id="hour-type-12" name="hours-12" value="12">
+                <label class="fw-lighter" for="12">12-hours</label><br>
+                <input type="radio" id="hour-type-24" name="hours-12" value="24" checked>
+                <label class="fw-lighter" for="24">24-hours</label>
+                </div>
+        </div>       
+    </div>
+    
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/analogClock.js"></script>
+    <script src="assets/js/digitalClock.js"></script>
+</body>
+
+</html>
