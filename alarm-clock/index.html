@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Analog Clock</title>
+    <title>Alarm Clock</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -52,6 +52,7 @@
         <h1><span id="alarm-hours">00</span> : <span id="alarm-minutes">00</span> : <span id="alarm-period">AM</span></h1>
         Hours
         <select name="select-hours" id="select-hours">
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -67,7 +68,7 @@
         </select>
         Minutes
         <select name="select-minutes" id="select-minutes">
-            <option value="1">0</option>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -129,12 +130,12 @@
             <option value="59">59</option>
         </select>
         Period
-        <select name="select-hours" id="select-hours">
-            <option value="0">AM</option>
-            <option value="1">PM</option>
+        <select name="select-period" id="select-period">
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
         </select>
         <div class="p-4">
-             <button class="btn btn-outline-dark">Set Alarm</button>
+             <button class="btn btn-outline-dark" onclick="setAlarm()">Set Alarm</button>
         </div>
        
     </div>
@@ -142,6 +143,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/analogClock.js"></script>
     <script src="assets/js/digitalClock.js"></script>
+    <script src="assets/js/alarmClock.js"></script>
     <script>
         //Displays only one clock (analog or digital) based on mode
         function setClockMode(param) {
