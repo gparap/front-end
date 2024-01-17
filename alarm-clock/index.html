@@ -10,25 +10,25 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
+<body onload="setClockMode('analog')">
     <!-- select clock mode -->
     <div class="container">
-        <select>
-        <option value="analog" selected>Analog</option>
-        <option value="digital">Digital</option>
-    </select>
+        <select id="select-clock-mode" onchange="setClockMode()">
+            <option value="analog" selected">Analog</option>
+            <option value="digital">Digital</option>
+        </select>
     </div>
 
     <!-- analog clock -->
-    <div class="text-center">
+    <div id="analog-clock" class="text-center">
         <canvas id="canvas" width="640" height="480"></canvas>
     </div>
 
     <!-- digital clock -->
-    <div class="container">
+    <div id="digital-clock" class="container">
         <div id="container-clock-digital">
                 <div id="info-digital">Digital Clock</div>
-                <div id="clock-digital">
+                <div id="clock-display-digital">
                     <div id="hours" class="clock-item"></div>
                     <div class="clock-item">:</div>
                     <div id="minutes" class="clock-item"></div>
@@ -50,6 +50,26 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/analogClock.js"></script>
     <script src="assets/js/digitalClock.js"></script>
+    <script>
+        //Displays only one clock (analog or digital) based on mode
+        function setClockMode(param) {
+            let clockMode = document.getElementById("select-clock-mode").value;
+            let analogClock = document.getElementById("analog-clock");
+            let digitalClock = document.getElementById("digital-clock");
+
+            if (clockMode === "analog" || param === "analog") {
+                //hide digital clock & display the analog one
+                digitalClock.style.display = "none";
+                analogClock.style.display = "block";
+
+            }else if (clockMode === "digital" || param === "digital"){
+                //hide analog clock & display the digital one
+                analogClock.style.display = "none";
+                digitalClock.style.display = "block";
+                digitalClock.style = "min-width: 32rem";
+            }
+        }
+    </script>
 </body>
 
 </html>

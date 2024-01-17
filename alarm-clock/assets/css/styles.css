@@ -39,7 +39,7 @@ body {
     font-size: larger;
 }
 
-#clock-digital {
+#clock-display-digital {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -55,10 +55,6 @@ body {
     float: left;
 }
 
-/* 
-
-
-
-
-
- */
+#digital-clock {
+    padding-top: 145px; /* ~= radius of the analog clock */
+}
