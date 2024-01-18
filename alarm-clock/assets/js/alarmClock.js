@@ -78,7 +78,7 @@ function handleTheAlarmClock(totalSecondsToAlarm, alarmTimeout) {
     //stop alarm
     setTimeout(function() {
         clearInterval(intervalId);
-        alert("alarm fired!");
+        playAlarmRingtone();
     }, alarmTimeout);
 }
 
@@ -118,4 +118,12 @@ function clearAlarm() {
     document.getElementById("alarm-hours").innerHTML = "00";
     document.getElementById("alarm-minutes").innerHTML = "00";
     document.getElementById("alarm-period").innerHTML = "AM";
+}
+
+function playAlarmRingtone() {
+    var audio = new Audio('assets/audio/alarm-clock-ringtone.mp3');
+    audio.addEventListener('ended', function() {
+        alert("alarm fired!");
+    });
+    audio.play();
 }
