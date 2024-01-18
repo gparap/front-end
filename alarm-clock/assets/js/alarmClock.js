@@ -1,7 +1,6 @@
 // Copyright (c) 2024 gparap
 // Alarm Clock
 
-//TODO: update alarm time in UI
 function setAlarm() {
     //get alarm values
     let hours = document.getElementById("select-hours").value;
@@ -81,4 +80,29 @@ function handleTheAlarmClock(totalSecondsToAlarm, alarmTimeout) {
         clearInterval(intervalId);
         alert("alarm fired!");
     }, alarmTimeout);
+}
+
+//Updates the alarm time texts in the user interface
+function updateAlarmUI() {
+    //get alarm values
+    let hours = document.getElementById("select-hours").value;
+    let minutes = document.getElementById("select-minutes").value;
+    let period = document.getElementById("select-period").value;
+    
+    //fix the alarm texts display like:
+    //ie. "01" instead of "1", "02" instead of "2", etc.
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    
+    //update alarm UI
+    let headerHours = document.getElementById("alarm-hours").innerHTML = hours;
+    let headerMinutes = document.getElementById("alarm-minutes").innerHTML = minutes;
+    let headerPeriod = document.getElementById("alarm-period").innerHTML = period.toUpperCase();
 }

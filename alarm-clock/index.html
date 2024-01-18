@@ -51,7 +51,7 @@
         <h2>Alarm Set On:</h2>
         <h1><span id="alarm-hours">00</span> : <span id="alarm-minutes">00</span> : <span id="alarm-period">AM</span></h1>
         Hours
-        <select name="select-hours" id="select-hours">
+        <select name="select-hours" id="select-hours" onchange="updateAlarmUI()">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -67,7 +67,7 @@
             <option value="12">12</option>
         </select>
         Minutes
-        <select name="select-minutes" id="select-minutes">
+        <select name="select-minutes" id="select-minutes" onchange="updateAlarmUI()">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -130,7 +130,7 @@
             <option value="59">59</option>
         </select>
         Period
-        <select name="select-period" id="select-period">
+        <select name="select-period" id="select-period" onchange="updateAlarmUI()">
             <option value="am">AM</option>
             <option value="pm">PM</option>
         </select>
