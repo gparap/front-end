@@ -106,3 +106,16 @@ function updateAlarmUI() {
     let headerMinutes = document.getElementById("alarm-minutes").innerHTML = minutes;
     let headerPeriod = document.getElementById("alarm-period").innerHTML = period.toUpperCase();
 }
+
+//Clears alarm select options & text values
+function clearAlarm() {
+    //clear options
+    document.getElementById("select-hours").selectedIndex = 0;
+    document.getElementById("select-minutes").selectedIndex = 0;
+    document.getElementById("select-period").selectedIndex = 0;
+
+    //clear text
+    document.getElementById("alarm-hours").innerHTML = "00";
+    document.getElementById("alarm-minutes").innerHTML = "00";
+    document.getElementById("alarm-period").innerHTML = "AM";
+}
