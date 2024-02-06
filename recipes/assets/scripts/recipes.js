@@ -9,7 +9,7 @@ function initRecipes() {
         const formattedText = element.textContent.replace(/\s+/g, ' ').trim();
 
         //keep the full text of the recipe
-        let recipe 
+        let recipe
 
         //give the element the shortend text
         element.innerHTML = getShortendText(formattedText);
@@ -34,4 +34,20 @@ function getShortendText(fullText) {
 
     //return the shortened text version
     return shortenedText;
+}
+
+/**
+ * Displays the full recipe inside a modal.
+ * @param {*} id the selected recipe's id
+ */
+function viewRecipe(id) {
+    //get the modal's elements
+    let title = document.getElementById('modalRecipeTitle');
+    let recipe = document.getElementById('modalRecipeContent');
+    let image = document.getElementById('modalRecipeImage');
+
+    //update the modal with the recipe
+    title.innerHTML = recipes[id - 1].title;
+    recipe.innerHTML = recipes[id - 1].recipe;
+    image.src = "assets/img/" + recipes[id - 1].image;
 }
