@@ -1,0 +1,234 @@
+<!-- © 2024 gparap -->
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>recipes</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        /* make cards homogeneous */
+        .card-img-top {
+            border-top-left-radius: var(--bs-card-inner-border-radius);
+            border-top-right-radius: var(--bs-card-inner-border-radius);
+            max-width: 100%;
+            max-height: 256px;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* give cards spacing & shadow */
+        .card {
+            margin-bottom: 1rem;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md bg-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/logo.png" alt="Logo" width="24" height="24"
+                        class="d-inline-block align-text-top">
+                    Recipes</a>
+                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                    <span class="visually-hidden">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">All</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Recent</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">Featured</a></li>
+                        <!-- Recipe Categories List -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Meat</a></li>
+                                <li><a class="dropdown-item" href="#">Pasta</a></li>
+                                <li><a class="dropdown-item" href="#">Salad</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Search Input and Button -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group mt-2">
+                    <input type="text" class="form-control" placeholder="Search Recipe or Ingredient">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16" class="bi bi-search">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipes Card Group -->
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_01.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_02.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Neque convallis a cras semper auctor neque. Ac tortor dignissim convallis
+                            aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc
+                            faucibus a. Molestie at elementum eu facilisis sed odio morbi. Mauris rhoncus aenean vel
+                            elit. Nunc sed velit dignissim sodales ut eu sem integer. Iaculis urna id volutpat lacus
+                            laoreet non curabitur gravida arcu. Molestie ac feugiat sed lectus vestibulum mattis
+                            ullamcorper velit sed. Semper eget duis at tellus at urna. Consectetur adipiscing elit ut
+                            aliquam purus sit amet. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu.
+                            Tempus egestas sed sed risus pretium quam vulputate dignissim. Eleifend quam adipiscing
+                            vitae proin sagittis nisl. Risus feugiat in ante metus dictum. Nulla aliquet porttitor lacus
+                            luctus accumsan. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Amet
+                            nisl suscipit adipiscing bibendum.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_03.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_02.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_03.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_01.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_03.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_01.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_02.jpeg"
+                        >
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                            dapibus
+                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-dark" type="button">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- endof recipes -->
+
+        <!-- Footer -->
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Top
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+                        </svg>
+                    </a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2024 gparap</p>
+        </footer>
+
+    </div><!-- endof container -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
