@@ -7,25 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>recipes</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <style>
-        /* make cards homogeneous */
-        .card-img-top {
-            border-top-left-radius: var(--bs-card-inner-border-radius);
-            border-top-right-radius: var(--bs-card-inner-border-radius);
-            max-width: 100%;
-            max-height: 256px;
-            width: auto;
-            height: auto;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* give cards spacing & shadow */
-        .card {
-            margin-bottom: 1rem;
-            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/styles/recipe.css">
 </head>
 
 <body>
@@ -81,137 +63,9 @@
             </div>
         </div>
 
-        <!-- Recipes Card Group -->
-        <div class="row mt-2">
-            <div class="col-md-4">
-                <div class="card" id="1">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_01.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.</p>
-                        <button onclick="viewRecipe(1);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="2">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_02.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Neque convallis a cras semper auctor neque. Ac tortor dignissim convallis
-                            aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc
-                            faucibus a. Molestie at elementum eu facilisis sed odio morbi. Mauris rhoncus aenean vel
-                            elit. Nunc sed velit dignissim sodales ut eu sem integer. Iaculis urna id volutpat lacus
-                            laoreet non curabitur gravida arcu. Molestie ac feugiat sed lectus vestibulum mattis
-                            ullamcorper velit sed. Semper eget duis at tellus at urna. Consectetur adipiscing elit ut
-                            aliquam purus sit amet. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu.
-                            Tempus egestas sed sed risus pretium quam vulputate dignissim. Eleifend quam adipiscing
-                            vitae proin sagittis nisl. Risus feugiat in ante metus dictum. Nulla aliquet porttitor lacus
-                            luctus accumsan. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Amet
-                            nisl suscipit adipiscing bibendum.</p>
-                            <button onclick="viewRecipe(2);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="3">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_03.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(3);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="4">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_02.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(4);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="5">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_03.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(5);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="6">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_01.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(6);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="7">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_03.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(7);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="8">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_01.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(8);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" id="9">
-                    <img class="card-img-top w-100 d-block" src="assets/img/Pork_with_Potatoes_02.jpeg">
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus
-                            ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <button onclick="viewRecipe(9);" class="btn btn-dark" type="button"
-                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
-                    </div>
-                </div>
-            </div>
-        </div><!-- endof recipes -->
+        <!-- Recipes Container -->
+        <div class="row mt-2" id="container-recipes">
+        </div>
 
         <!-- Recipe Modal -->
         <div class="modal fade" id="recipeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -255,7 +109,6 @@
     </div><!-- endof container -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/scripts/recipes.js"></script>
-    <script src="assets/scripts/recipes_data.js"></script>
     <script>
         initRecipes();
     </script>

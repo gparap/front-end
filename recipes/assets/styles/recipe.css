@@ -1,0 +1,19 @@
+ /* © 2024 gparap */
+
+/* make cards homogeneous */
+.card-img-top {
+    border-top-left-radius: var(--bs-card-inner-border-radius);
+    border-top-right-radius: var(--bs-card-inner-border-radius);
+    max-width: 100%;
+    max-height: 256px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* give cards spacing & shadow */
+.card {
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
