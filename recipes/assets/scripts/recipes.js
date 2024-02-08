@@ -65,13 +65,28 @@ function getShortendText(fullText) {
 function viewRecipe(id) {
     //get the modal's elements
     let title = document.getElementById('modalRecipeTitle');
-    let recipe = document.getElementById('modalRecipeContent');
+    let recipeDescription = document.getElementById('modalRecipeDescription');
+    let recipeIngredients = document.getElementById('modalRecipeIngredients');
+    let recipeInstructions = document.getElementById('modalRecipeInstructions');
     let image = document.getElementById('modalRecipeImage');
 
-    //update the modal with the recipe
+    //Update the modal with the recipe details
+    //title 
     title.innerHTML = recipes[id - 1].title;
-    recipe.innerHTML = `<p>${recipes[id - 1].description}<br><br>${recipes[id - 1].recipe}</p>`;
+    //image
     image.src = recipes[id - 1].image;
+    //description
+    recipeDescription.innerHTML = recipes[id - 1].description;
+    //ingredients
+    recipeIngredients.innerHTML = `<p><b>Ingredients:</b><br /></p>`;
+    recipes[id - 1].ingredients.forEach(ingredient => {
+        recipeIngredients.innerHTML += `${ingredient}</br>`;
+    });
+    //instructions
+    recipeInstructions.innerHTML = `<p><b>Instructions:</b><br /></p>`;
+    recipes[id - 1].instructions.forEach(instruction => {
+        recipeInstructions.innerHTML += `${instruction}</br>`;
+    });
 }
 
 /* Displays all recipes on the page. */
