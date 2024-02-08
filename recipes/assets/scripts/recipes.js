@@ -95,8 +95,16 @@ const viewRecipes = (recipesData) => {
 
     //append recipe to container
     recipesData.forEach((recipe) => {
-        container.innerHTML +=`
-            <div class="col-md-4">
+        //get recipe's categories, if has extra 
+        //ie. basic -> meat, extra -> featured
+        const categories = recipe.category.split(',');
+        let categoryBasic = categories[0];
+        let categoryExtra = categories[1];
+
+        //append recipe
+        if (categoryExtra === '') {
+            container.innerHTML += `
+            <div class="col-md-4 filter-recipe-all filter-recipe-${categoryBasic}">
                 <div class="card" id="${recipe.id}">
                     <img class="card-img-top w-100 d-block" src="${recipe.image}">
                     <div class="card-body">
@@ -109,5 +117,37 @@ const viewRecipes = (recipesData) => {
                     </div>
                 </div>
             </div>`;
+        } else {
+            container.innerHTML += `
+            <div class="col-md-4 filter-recipe-all filter-recipe-${categoryBasic} filter-recipe-${categoryExtra}">
+                <div class="card" id="${recipe.id}">
+                    <img class="card-img-top w-100 d-block" src="${recipe.image}">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <p>${recipe.title}</p>
+                        </h4>
+                        <p class="card-text">${recipe.description}</p>
+                        <button onclick="viewRecipe(${recipe.id});" class="btn btn-dark" type="button"
+                            data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
+                    </div>
+                </div>
+            </div>`;
+        }
     });
 };
+
+/* Shows or hides recipes based on their categories. */
+function filterCategory(category) {
+    //get all the recipe elements on the page
+    let recipeElements = document.querySelectorAll('.filter-recipe-all, filter-recipe-recent, filter-recipe-reatured, \
+    .filter-recipe-meat, .filter-recipe-pasta, .filter-recipe-salad');
+
+    //filter recipe elements based on category
+    recipeElements.forEach(element => {
+        if (element.classList.contains(category)) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+}

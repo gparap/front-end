@@ -2,6 +2,7 @@
   "recipes": [
     {
       "id": "0",
+      "category" : "",
       "title": "",
       "description": "",
       "ingredients": [

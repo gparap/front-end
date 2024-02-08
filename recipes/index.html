@@ -26,20 +26,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link active" href="#">All</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#">Recent</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#">Featured</a></li>
+                        <li class="nav-item"><a class="nav-link active" type="button" onclick="filterCategory('filter-recipe-all');">All</a></li>
+                        <li class="nav-item"><a class="nav-link active" type="button" onclick="filterCategory('filter-recipe-recent');">Recent</a></li>
+                        <li class="nav-item"><a class="nav-link active" type="button" onclick="filterCategory('filter-recipe-featured');">Featured</a></li>
                         <!-- Recipe Categories List -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Categories
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Meat</a></li>
-                                <li><a class="dropdown-item" href="#">Pasta</a></li>
-                                <li><a class="dropdown-item" href="#">Salad</a></li>
-                            </ul>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" type="button" onclick="filterCategory('filter-recipe-meat');">Meat</button>
+                                <button class="dropdown-item" type="button" onclick="filterCategory('filter-recipe-pasta');">Pasta</button>
+                                <button class="dropdown-item" type="button" onclick="filterCategory('filter-recipe-salad');">Salad</button>
+                            </div>
                         </li>
                     </ul>
                 </div>
