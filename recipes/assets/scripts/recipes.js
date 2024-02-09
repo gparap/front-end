@@ -104,8 +104,8 @@ const viewRecipes = (recipesData) => {
         //append recipe
         if (categoryExtra === '') {
             container.innerHTML += `
-            <div class="col-md-4 filter-recipe-all filter-recipe-${categoryBasic}">
-                <div class="card" id="${recipe.id}">
+            <div id="${recipe.id}" class="col-md-4 filter-recipe-all filter-recipe-${categoryBasic}">
+                <div class="card">
                     <img class="card-img-top w-100 d-block" src="${recipe.image}">
                     <div class="card-body">
                         <h4 class="card-title">
@@ -119,8 +119,8 @@ const viewRecipes = (recipesData) => {
             </div>`;
         } else {
             container.innerHTML += `
-            <div class="col-md-4 filter-recipe-all filter-recipe-${categoryBasic} filter-recipe-${categoryExtra}">
-                <div class="card" id="${recipe.id}">
+            <div id="${recipe.id}" class="col-md-4 filter-recipe-all filter-recipe-${categoryBasic} filter-recipe-${categoryExtra}">
+                <div class="card">
                     <img class="card-img-top w-100 d-block" src="${recipe.image}">
                     <div class="card-body">
                         <h4 class="card-title">
@@ -149,5 +149,33 @@ function filterCategory(category) {
         } else {
             element.style.display = 'none';
         }
+    });
+}
+
+/* Search recipes based on their names or their ingredients. */
+function searchRecipes() {
+    //get search input
+    let inputText = document.getElementById('search-recipe');
+    let searchText = inputText.value.toLowerCase();
+
+    //search
+    recipes.forEach(recipe => {
+        //hide all recipes
+        let recipeElement = document.getElementById(recipe.id);
+        recipeElement.style.display = 'none';
+
+        //search in the recipe's title
+        if (recipe.title.toLowerCase().includes(searchText)) {
+            //show the element that holds the recipe
+            recipeElement.style.display = 'block';
+        }
+
+        //search in the recipe's ingredients
+        recipe.ingredients.forEach(ingredient => {
+            if (ingredient.toLowerCase().includes(searchText)) {
+                //show the element that holds the recipe
+                recipeElement.style.display = 'block';
+            }
+        });
     });
 }
