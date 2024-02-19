@@ -1,0 +1,69 @@
+/* © 2024 gparap */
+
+/* center all elements horizontally & vertically */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 512px;
+    margin: 0;
+}
+
+/* actual piano container */
+#container-piano {
+    background-color: black;
+    border-radius: 8px;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+}
+
+/* main heading */
+.container-heading {
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+    color: white;
+    padding: 1rem;
+}
+
+.logo {
+    padding: 0 0 0.75rem 0.25rem;
+}
+
+/* natural notes button style */
+.natural-note-button {
+    border-radius: 0;
+    color: black;
+    background-color: white;
+    width: 4rem;
+    height: 256px;
+    /* move the letter to the bottom */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+/* sharp notes button style */
+.btn.sharp-note-button {
+    border-radius: 0;
+    color: white;
+    background-color: black;
+    width: 4rem;
+    height: 160px;
+    position: absolute;
+    left: calc(var(--multiplier) * 4rem);
+    transform: translate(-50%);
+    z-index: 1;
+    top: .1rem;
+    /* move the letter to the bottom */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.btn.sharp-note-button:hover {
+    background-color: #373b3e;
+
+}
