@@ -68,3 +68,17 @@ body {
     background-color: #373b3e;
 
 }
+
+/* piano options */
+.piano-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0.25rem;
+}
+
+/* notes display checkbox */
+.piano-options > input {
+    margin: 0.25rem;
+}

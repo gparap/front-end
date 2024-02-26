@@ -1,5 +1,8 @@
 // © 2024 gparap
 
+//placeholder for note texts
+let notesTextsDefault = document.querySelectorAll('.natural-note-button, .sharp-note-button');
+
 function playNote(note) {
     //get the mp3 file from the note
     let audioSource = "";
@@ -17,5 +20,30 @@ function playNote(note) {
                 console.error("Error occurred:", e);
             }
         });
+    }
+}
+
+function handleNotesVisibility() {
+    //get the checkbox element
+    let checkbox = document.getElementById('notes-display-checkbox');
+
+    //get all the button elements with notes
+    let notesTexts = document.querySelectorAll('.natural-note-button, .sharp-note-button');
+    
+    //show notes if checkbox is checked
+    if (checkbox.checked) {
+        let i=0;
+        notesTexts.forEach(element => {
+            element.innerHTML = notesTextsDefault[i].dataset.noteText;
+            i++;
+        });
+    }
+
+    //hide notes if checkbox is not checked
+    else{
+        notesTexts.forEach(element => {
+            element.innerHTML = "";
+        });
+        
     }
 }

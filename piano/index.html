@@ -25,30 +25,36 @@
                 <h1>Virtual Piano</h1>
                 <img class="img img-fluid logo" src="assets/img/logo.png" width="16px" height="16px">
             </div>
+            <!-- Options -->
+            <div class="piano-options">
+                <label for="notes-display-checkbox">Display Notes</label>
+                <input type="checkbox" name="notes-display-checkbox" id="notes-display-checkbox" checked
+                onclick="handleNotesVisibility();">
+            </div>
+            <!-- Piano -->
             <div class="btn-group" role="group">
                 <!-- Natural Notes in the 3rd Octave -->
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('c3');">C</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('d3');">D</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('e3');">E</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('f3');">F</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('g3');">G</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('a3');">A</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('b3');">B</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="C" onclick="playNote('c3');">C</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="D" onclick="playNote('d3');">D</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="E" onclick="playNote('e3');">E</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="F" onclick="playNote('f3');">F</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="G" onclick="playNote('g3');">G</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="A" onclick="playNote('a3');">A</button>
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="B" onclick="playNote('b3');">B</button>
                 <!-- Sharp Notesin the 3rd Octave -->
-                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('c3_sharp')"
+                <button class="btn btn-light sharp-note-button" type="button" data-note-text="C#" onclick="playNote('c3_sharp')"
                     style="--multiplier: 1;">C#</button>
-                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('d3_sharp')"
+                <button class="btn btn-light sharp-note-button" type="button" data-note-text="D#" onclick="playNote('d3_sharp')"
                     style="--multiplier: 2;">D#</button>
-                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('f3_sharp')"
+                <button class="btn btn-light sharp-note-button" type="button" data-note-text="F#" onclick="playNote('f3_sharp')"
                     style="--multiplier: 4;">F#</button>
-                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('g3_sharp')"
+                <button class="btn btn-light sharp-note-button" type="button" data-note-text="G#" onclick="playNote('g3_sharp')"
                     style="--multiplier: 5;">G#</button>
-                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('a3_sharp')"
+                <button class="btn btn-light sharp-note-button" type="button" data-note-text="A#" onclick="playNote('a3_sharp')"
                     style="--multiplier: 6;">A#</button>
                 
                     <!-- Natural Notes in the 4thOctave -->
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('c4');">C</button>
-
+                <button class="btn btn-dark natural-note-button" type="button" data-note-text="C" onclick="playNote('c4');">C</button>
             </div>
         </div>
     </div>
