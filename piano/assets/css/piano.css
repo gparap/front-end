@@ -15,6 +15,7 @@ body {
     background-color: black;
     border-radius: 8px;
     width: auto;
+    min-width: fit-content;
     height: auto;
     padding: 1rem;
 }

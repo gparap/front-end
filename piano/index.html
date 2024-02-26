@@ -26,24 +26,29 @@
                 <img class="img img-fluid logo" src="assets/img/logo.png" width="16px" height="16px">
             </div>
             <div class="btn-group" role="group">
-                <!-- TODO: fix piano display, starting from C note -->
                 <!-- Natural Notes in the 3rd Octave -->
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('a3');">A</button>
-                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('b3');">B</button>
                 <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('c3');">C</button>
                 <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('d3');">D</button>
                 <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('e3');">E</button>
                 <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('f3');">F</button>
                 <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('g3');">G</button>
+                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('a3');">A</button>
+                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('b3');">B</button>
                 <!-- Sharp Notesin the 3rd Octave -->
-                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('a3_sharp')"
-                    style="--multiplier: 1;">A#</button>
                 <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('c3_sharp')"
-                    style="--multiplier: 3;">C#</button>
+                    style="--multiplier: 1;">C#</button>
                 <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('d3_sharp')"
-                    style="--multiplier: 4;">D#</button>
+                    style="--multiplier: 2;">D#</button>
                 <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('f3_sharp')"
-                    style="--multiplier: 6;">F#</button>
+                    style="--multiplier: 4;">F#</button>
+                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('g3_sharp')"
+                    style="--multiplier: 5;">G#</button>
+                <button class="btn btn-light sharp-note-button" type="button" onclick="playNote('a3_sharp')"
+                    style="--multiplier: 6;">A#</button>
+                
+                    <!-- Natural Notes in the 4thOctave -->
+                <button class="btn btn-dark natural-note-button" type="button" onclick="playNote('c4');">C</button>
+
             </div>
         </div>
     </div>
