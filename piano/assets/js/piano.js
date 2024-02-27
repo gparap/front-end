@@ -3,6 +3,9 @@
 //placeholder for note texts
 let notesTextsDefault = document.querySelectorAll('.natural-note-button, .sharp-note-button');
 
+//audio volume global
+let volume = 0.5;
+
 function playNote(note) {
     //get the mp3 file from the note
     let audioSource = "";
@@ -12,6 +15,7 @@ function playNote(note) {
     let audio = document.getElementById('audio-player');
     audio.src = audioSource;
     if (audio && typeof audio.play === 'function') {
+        audio.volume = volume;
         audio.play();
     } else {
         //log what went wrong
@@ -46,4 +50,14 @@ function handleNotesVisibility() {
         });
         
     }
+}
+
+function handleSoundVolume() {
+    //get the range option
+    let range = document.getElementById('sound-volume-range').value;
+    volume = range / 100;
+
+    //set the audio volume
+    let audio = document.getElementById('audio-player');
+    audio.volume = volume;
 }
