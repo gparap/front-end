@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-custom navbar-light">
+    <nav class="navbar navbar-expand-md fixed-top bg-light navbar-custom navbar-light">
         <div class="container"><a class="navbar-brand" href="#" style="text-transform: lowercase;">gparap</a><button
                 data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span
                     class="visually-hidden">Toggle
@@ -26,7 +26,9 @@
                     <li class="nav-item"><a class="nav-link" href="#" style="text-transform: none;">Dummy Link</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-transform: none;">Dummy Link</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-moon-fill"></i></a>
+                        <a class="nav-link" type="button" onclick="toggleDisplayMode();">
+                            <i class="bi bi-moon-fill" id="theme-switcher-icon"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -102,6 +104,44 @@
         </div>
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        function toggleDisplayMode() {
+            //handle the navigation bar colors
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('bg-dark');
+            navbar.classList.toggle('bg-light');
+            navbar.classList.toggle('navbar-light');
+            navbar.classList.toggle('navbar-dark');
+
+            //handle the background & text colors
+            var body = document.querySelector('body');
+            if (navbar.classList.contains('bg-dark')) {
+                body.style.backgroundColor = '#343a40';
+                body.style.color = 'white';
+            } else {
+                body.style.backgroundColor = 'white';
+                body.style.color = '#343a40';
+            }
+
+            //handle the footer colors
+            var footer = document.querySelector('footer');
+            footer.classList.toggle('bg-white');
+            footer.classList.toggle('bg-dark');
+            var paragraph = footer.querySelector('p');
+            paragraph.classList.toggle('text-black');
+            paragraph.classList.toggle('text-white');
+
+            //change the theme switcher icon
+            var icon = document.querySelector('.bi');
+            if (navbar.classList.contains('bg-dark')) {
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+            } else {
+                icon.classList.remove('bi-sun-fill');
+                icon.classList.add('bi-moon-fill');
+            }
+        }
+    </script>
 </body>
 
 </html>
