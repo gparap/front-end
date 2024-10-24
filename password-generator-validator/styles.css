@@ -1,0 +1,109 @@
+/* © 2024 gparap */
+
+:root {
+  --container-max-width: 600px;
+  --container-max-height: 400px;
+  --container-margin-top: -8rem;
+  --password-label-width: 256px;
+  --radio-margin: 0.125rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  min-width: 576px;
+}
+
+#generator {
+  background: #808080;
+  border-width: var(--container-max-width);
+  text-align: center;
+  width: var(--container-max-width);
+  height: var(--container-max-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: var(--container-margin-top);
+}
+
+#validator {
+  background: #808080;
+  border-width: var(--container-max-width);
+  text-align: center;
+  width: var(--container-max-width);
+  height: var(--container-max-height);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: var(--container-margin-top);
+}
+
+/* Custom styles for generator/validator items */
+/* ------------------------------------------- */
+.password-label {
+  position: relative;
+  transform: translateY(-100%);
+  padding: 1rem;
+  background-color: var(--bs-tertiary-bg);
+  width: var(--password-label-width);
+}
+
+.password-button {
+  margin-top: 1rem;
+  width: var(--password-label-width);
+}
+
+/* Custom styles for radio items */
+/* ------------------------------*/
+.centered-radio {
+  margin: var(--radio-margin);
+  display: flex;
+  align-items: center;
+}
+
+.right-radio-label {
+  margin: var(--radio-margin);
+  text-align: right;
+}
+
+/* Generic styles */
+/* -------------- */
+.centered-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Custom styles for password info items */
+/* --------------------------------------*/
+#password-info-container {
+  visibility: hidden;
+  max-width: var(--container-max-width);
+  display: flex; justify-content: center;
+}
+
+#password-info {
+  max-width: 480px;
+}
+
+@media (max-width: 576px) {
+  #password-info {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 360px) {
+  #password-info {
+    max-width: 256px;
+  }
+}
