@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Untitled</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"><script src="password.js"></script>
 </head>
 
 <body>
@@ -15,8 +15,36 @@
         <!-- Password Generator -->
         <div id="generator">
             <label class="form-label password-label">Password Generator</label>
-            <input type="text">
-            <button class="btn btn-primary password-button" type="button">Generate Password</button>
+            <div class="centered-items-row" >
+                <input type="text" id="generatorInputText">
+                <!-- Icon for copy -->
+                <svg onclick="copyPasswordToClipboard()"
+                    style="margin-left: -26px; background-color: darkgray; padding: 2px;"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                </svg>
+            </div>
+            <button onclick="displayGeneratedPassword();" class="btn btn-primary password-button" type="button">Generate Password</button>
+            
+            <!-- Radio to switch between password lengths -->
+            <div class="centered-radio">
+                <input class="form-check-input" type="radio" name="flexRadioPasswordLength" id="flexRadio08CharsPassword" checked>
+                <label class="form-check-label right-radio-label" for="flexRadio08CharsPassword">
+                    08-characters password
+                </label>
+            </div>
+            <div class="centered-radio">
+                <input class="form-check-input" type="radio" name="flexRadioPasswordLength" id="flexRadio16CharsPassword">
+                <label class="form-check-label right-radio-label" for="flexRadio16CharsPassword">
+                    16-characters password
+                </label>
+            </div>
+            <div class="centered-radio">
+                <input class="form-check-input" type="radio" name="flexRadioPasswordLength" id="flexRadio24CharsPassword">
+                <label class="form-check-label right-radio-label" for="flexRadio24CharsPassword">
+                    24-characters password
+                </label>
+            </div>
         </div>
 
         <!-- Password Validator -->
@@ -26,8 +54,8 @@
             <button class="btn btn-primary password-button" type="button">Validate Password</button>
         </div>
 
-        <!-- Radio to switch between them -->
-        <div class="container centered-items">
+        <!-- Radio to switch between password generator & validator -->
+        <div class="container centered-items-column">
             <div class="centered-radio">
                 <input onchange="togglePasswordScreens();" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioGenerator" checked>
                 <label class="form-check-label right-radio-label" for="flexRadioGenerator">

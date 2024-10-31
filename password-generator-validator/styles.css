@@ -78,9 +78,15 @@ body {
   flex-direction: column;
 }
 
-.centered-items {
+.centered-items-column {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.centered-items-row {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
