@@ -56,6 +56,39 @@ function displayGeneratedPassword() {
     element.value = password;
 }
 
+/* Validate a user-typed password (aka show password strength). */
+function displayValidatedPasswordStrength() {
+    //create a helper array to hold password validations
+    let passwordStrengthArray = new Array(5).fill(0);
+
+    //get the password from the input element
+    let passwordElement = document.getElementById("validatorInputText");
+    if (passwordElement.value === "") { alert("Pleasen enter a password!"); }
+    let password = passwordElement.value;
+
+    //START PASSWORD VALIDATION
+    //check if the password is not short (but not long) (must be >=8 and <16)
+    if (password.length >= 8) passwordStrengthArray[0] = 1;
+    //check if password contains at least 2 digits (0..9)
+    if (/([0-9].*[0-9])/.test(password)) passwordStrengthArray[1] = 1;
+    //check if password contains at least 2 uppercase letters (A..Z)
+    if (/([A-Z].*[A-Z])/.test(password)) passwordStrengthArray[2] = 1;
+    //check if password contains at least 2 special characters (not in 0..9, a..z or A..Z)
+    if (/([^A-Za-z0-9].*[^A-Za-z0-9])/.test(password)) passwordStrengthArray[3] = 1;
+    //check if the password is not long enough (must be >=16)
+    if (password.length >= 16) passwordStrengthArray[4] = 1;
+        
+    //get the strength of the array;
+    let passwordStrength = 0;
+    passwordStrengthArray.forEach(element => {
+        passwordStrength += element;
+    });
+
+    //update the password strength element
+    let passwordStrengthElement = document.getElementById("passwordStrength");
+    passwordStrengthElement.innerText = "Password Strength is "+ passwordStrength + " out of 5";
+}
+
 /* Copy the generated password to clipboard and alert about it. */
 function copyPasswordToClipboard() {
     let password = document.getElementById("generatorInputText").value.toString();
@@ -64,3 +97,4 @@ function copyPasswordToClipboard() {
         alert("Password copied.");
     }
 }
+
