@@ -1,0 +1,33 @@
+/* © 2024 gparap */
+
+/* Design Dimensions: 576px - 991px */
+/* begin----------------------------*/
+#app-label-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-label {
+    height: 128px;
+    background-color: var(--bs-secondary-bg);
+    align-content: center;
+}
+
+#add-transaction-panel {
+    display: block;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--bs-secondary-bg);
+}
+
+.add-transaction {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#transaction-panel {
+    background-color: var(--bs-secondary-bg);
+}
+/* Design Dimensions: 576px - 991px */
+/* end----------------------------- */
